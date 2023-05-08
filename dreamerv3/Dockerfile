@@ -30,7 +30,7 @@ RUN pip3 install --upgrade pip
 # Envs
 ENV MUJOCO_GL egl
 ENV DMLAB_DATASET_PATH /dmlab_data
-COPY scripts scripts
+COPY dreamerv3/embodied/scripts scripts
 RUN sh scripts/install-dmlab.sh
 RUN sh scripts/install-atari.sh
 RUN sh scripts/install-minecraft.sh
@@ -45,7 +45,7 @@ RUN pip3 install jax[cuda11_cudnn82] -f https://storage.googleapis.com/jax-relea
 RUN pip3 install jaxlib
 RUN pip3 install tensorflow_probability
 RUN pip3 install optax
-RUN pip3 install tensorflow-cpu
+RUN pip3 install tensorflow-cpu wandb moviepy imageio
 ENV XLA_PYTHON_CLIENT_MEM_FRACTION 0.8
 
 # Google Cloud DNS cache (optional)
