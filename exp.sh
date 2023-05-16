@@ -13,12 +13,12 @@ function onCtrlC () {
   exit 1
 }
 
-envs=${1:-dmc_proprio}
-tasks=${2:-dmc_walker_walk}
+envs=${1:-atari100k}
+tasks=${2:-atari_breakout}
 model_sizes=${2:-small,medium,large,xlarge}
 args=${3:-}
-gpus=${3:-1,2,3,4,5,6,7}
-threads=${4:-7}
+gpus=${3:-0,1,2,3,4,5,6,7}
+threads=${4:-8}
 times=${5:-5}
 
 tasks=(${tasks//,/ })
